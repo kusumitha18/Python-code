@@ -1,0 +1,77 @@
+1.##Program to check if a number is even or odd
+number=int(input("Enter a no: "))
+ 
+ #logic to print even or odd
+ print("the no ",number,"is ",'even' if number%2==0 else 'odd')
+  
+2.##sum of digits
+number = int(input("Enter a no: "))
+ sum=int(0) 
+ while number>0:
+     sum+=int(number%10)
+     number/=10
+ print("Sum of digit of no is ",sum)
+  
+3.##problem solving
+  class Employee:
+    def __init__(self, name, basic_salary, special_allowances, bonus_percentage):
+        self.name = name
+        self.basic_salary = basic_salary
+        self.special_allowances = special_allowances
+        self.bonus_percentage = bonus_percentage
+
+    def calculate_taxable_income(self):
+        gross_salary = (self.basic_salary + self.special_allowances) * 12
+        annual_bonus = (self.bonus_percentage / 100) * gross_salary
+        standard_deduction = 50000
+        taxable_income = gross_salary + annual_bonus - standard_deduction
+        print(f"Gross Salary: ₹{gross_salary:,.2f}")
+        print(f"Annual Bonus: ₹{annual_bonus:,.2f}")
+        print(f"Standard Deduction: ₹{standard_deduction:,.2f}")
+        print(f"Taxable Income: ₹{taxable_income:,.2f}")
+ emp = Employee(name="John Doe", basic_salary=70000, special_allowances=20000, bonus_percentage=10)
+ emp.calculate_taxable_income()
+4.##    level 3 problem solving
+    def calculate_tax(taxable_income):
+    if taxable_income <= 300000:
+        tax = 0
+    elif taxable_income <= 600000:
+        tax = (taxable_income - 300000) * 0.05
+    elif taxable_income <= 900000:
+        tax = (taxable_income - 600000) * 0.10 + 15000  
+    elif taxable_income <= 1200000:
+        tax = (taxable_income - 900000) * 0.15 + 45000  
+    elif taxable_income <= 1500000:
+        tax = (taxable_income - 1200000) * 0.20 + 105000  
+    else:
+        tax = (taxable_income - 1500000) * 0.30 + 180000  
+    if taxable_income <= 700000:
+        tax = 0
+
+    cess = tax * 0.04
+    total_tax = tax + cess
+    
+    return tax, cess, total_tax
+
+def generate_report(gross_salary, total_tax):
+    net_salary = gross_salary - total_tax
+    print(f"\nTax Calculation Report")
+    print(f"Gross Salary: ₹{gross_salary}")
+    print(f"Tax Payable: ₹{total_tax}")
+    print(f"Net Salary: ₹{net_salary}")
+def main():
+   
+    name = input("Enter employee name: ")
+    basic_salary = float(input("Enter basic salary: ₹"))
+    hra = float(input("Enter HRA: ₹"))
+    other_allowances = float(input("Enter other allowances: ₹"))
+    
+    gross_salary = basic_salary + hra + other_allowances
+    
+    taxable_income = gross_salary
+   
+    tax, cess, total_tax = calculate_tax(taxable_income)
+    generate_report(gross_salary, total_tax)
+if __name__ == "__main__":
+    main()
+  
