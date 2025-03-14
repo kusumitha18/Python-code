@@ -1,0 +1,96 @@
+1.##Arithmetic operators
+  if __name__ == '__main__':
+    a =int(input( ))
+    b =int(input( ))
+    print(a+b)
+    print(a-b)
+    print(a*b)
+  
+2.##Python:division
+  if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+    print(a//b)
+    print(a/b)
+
+3.##Python If-else
+  import math
+import os
+import random
+import re
+import sys
+if __name__ == '__main__':
+    n = int(input().strip())
+if(n%2!=0 ):
+  print('Weird')
+elif( n%2==0 and n in range(2,5)):
+    print('Not Weird')
+elif(n%2==0 and n in range(6,21)):
+    print('Weird')
+elif( n%2==0 and n>20):  
+    print('Not Weird')
+
+4.##Loops
+      if __name__ == '__main__':
+    n = int(input())
+    for i in range(n):
+        print(i**2)
+
+5.##Write a function
+      def is_leap(year):
+    leap = False
+    if (year%4==0 and year%100!=0)or(year%400==0):
+        leap=True
+    # Write your logic here
+    return leap
+year = int(input())
+print(is_leap(year))
+          
+6.##Print Function
+          if __name__ == '__main__':
+    n = int(input())
+    for n in range(1,n+1):
+      print(n,end='')
+ 
+7.##List Comprehension
+      if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    print(list([i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if(i+j+k != n))) 
+
+8.##Find the Runner-Up score
+      if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    arr1=set(arr)
+    arr2=sorted(arr1)
+    print(arr2[-2])
+
+9.##Nested Lists
+      if __name__ == '__main__':
+    alist=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        alist.append([name, score])
+second_highest = sorted(set([score for name, score in alist]))[1]
+print('\n'.join(sorted([name for name, score in alist if score == second_highest])))
+
+10.##Find the percentage
+      if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    l1 = list(student_marks[query_name]) 
+
+    addition = sum(l1)
+
+    result = addition/len(l1)
+
+print('%.2f'% result)           
